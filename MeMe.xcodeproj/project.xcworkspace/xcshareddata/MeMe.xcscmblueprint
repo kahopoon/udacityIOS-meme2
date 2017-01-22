@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "CD7DBBBA78439B4D21F1285F2AEBA7F7F0DCD1F6",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "CD7DBBBA78439B4D21F1285F2AEBA7F7F0DCD1F6" : 9223372036854775807,
+    "566DE9AEF22E02087DB7B612FF181276117DF2D1" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "7D78970F-A406-47AD-93E9-4FC53EE204B8",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "CD7DBBBA78439B4D21F1285F2AEBA7F7F0DCD1F6" : "MeMe\/",
+    "566DE9AEF22E02087DB7B612FF181276117DF2D1" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "MeMe",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "MeMe.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/kahopoon\/udacityIOS-meme.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "566DE9AEF22E02087DB7B612FF181276117DF2D1"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/kahopoon\/udacityIOS-meme.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "CD7DBBBA78439B4D21F1285F2AEBA7F7F0DCD1F6"
+    }
+  ]
+}

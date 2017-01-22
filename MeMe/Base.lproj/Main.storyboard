@@ -48,7 +48,7 @@
                                 <rect key="frame" x="0.0" y="109.5" width="375" height="48"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="40"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="aMv-Wc-T3x"/>
                                 </connections>
