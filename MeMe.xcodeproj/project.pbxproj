@@ -13,6 +13,12 @@
 		2C8CEC1E1E34027300A8E605 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C8CEC1D1E34027300A8E605 /* Assets.xcassets */; };
 		2C8CEC211E34027300A8E605 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C8CEC1F1E34027300A8E605 /* LaunchScreen.storyboard */; };
 		2C8CEC2B1E342EAB00A8E605 /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8CEC2A1E342EAB00A8E605 /* Meme.swift */; };
+		2C8CEC2D1E347AC300A8E605 /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8CEC2C1E347AC300A8E605 /* Singleton.swift */; };
+		2C8CEC2F1E34805200A8E605 /* MeMeTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8CEC2E1E34805200A8E605 /* MeMeTableVC.swift */; };
+		2C8CEC311E34818F00A8E605 /* MeMeTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8CEC301E34818F00A8E605 /* MeMeTableCell.swift */; };
+		2C8CEC331E34869200A8E605 /* ShowMeMeDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8CEC321E34869200A8E605 /* ShowMeMeDetails.swift */; };
+		2C8CEC351E348AF900A8E605 /* MeMeCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8CEC341E348AF900A8E605 /* MeMeCollectionVC.swift */; };
+		2C8CEC371E348B1300A8E605 /* MeMeCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8CEC361E348B1300A8E605 /* MeMeCollectionCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +30,12 @@
 		2C8CEC201E34027300A8E605 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2C8CEC221E34027300A8E605 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C8CEC2A1E342EAB00A8E605 /* Meme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
+		2C8CEC2C1E347AC300A8E605 /* Singleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
+		2C8CEC2E1E34805200A8E605 /* MeMeTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeMeTableVC.swift; sourceTree = "<group>"; };
+		2C8CEC301E34818F00A8E605 /* MeMeTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeMeTableCell.swift; sourceTree = "<group>"; };
+		2C8CEC321E34869200A8E605 /* ShowMeMeDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowMeMeDetails.swift; sourceTree = "<group>"; };
+		2C8CEC341E348AF900A8E605 /* MeMeCollectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeMeCollectionVC.swift; sourceTree = "<group>"; };
+		2C8CEC361E348B1300A8E605 /* MeMeCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeMeCollectionCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				2C8CEC2A1E342EAB00A8E605 /* Meme.swift */,
+				2C8CEC2C1E347AC300A8E605 /* Singleton.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -79,6 +92,11 @@
 			isa = PBXGroup;
 			children = (
 				2C8CEC181E34027300A8E605 /* AddNewVC.swift */,
+				2C8CEC321E34869200A8E605 /* ShowMeMeDetails.swift */,
+				2C8CEC2E1E34805200A8E605 /* MeMeTableVC.swift */,
+				2C8CEC301E34818F00A8E605 /* MeMeTableCell.swift */,
+				2C8CEC341E348AF900A8E605 /* MeMeCollectionVC.swift */,
+				2C8CEC361E348B1300A8E605 /* MeMeCollectionCell.swift */,
 			);
 			name = VC;
 			sourceTree = "<group>";
@@ -157,8 +175,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C8CEC2B1E342EAB00A8E605 /* Meme.swift in Sources */,
+				2C8CEC2D1E347AC300A8E605 /* Singleton.swift in Sources */,
+				2C8CEC351E348AF900A8E605 /* MeMeCollectionVC.swift in Sources */,
+				2C8CEC371E348B1300A8E605 /* MeMeCollectionCell.swift in Sources */,
 				2C8CEC191E34027300A8E605 /* AddNewVC.swift in Sources */,
+				2C8CEC2F1E34805200A8E605 /* MeMeTableVC.swift in Sources */,
+				2C8CEC311E34818F00A8E605 /* MeMeTableCell.swift in Sources */,
 				2C8CEC171E34027300A8E605 /* AppDelegate.swift in Sources */,
+				2C8CEC331E34869200A8E605 /* ShowMeMeDetails.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

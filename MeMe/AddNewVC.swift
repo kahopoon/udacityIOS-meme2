@@ -19,6 +19,10 @@ class AddNewVC: UIViewController, UINavigationControllerDelegate, UIImagePickerC
     
     var memedImage:UIImage!
     
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
     enum ButtonType: Int {
         case camera = 0, album
     }
@@ -30,12 +34,15 @@ class AddNewVC: UIViewController, UINavigationControllerDelegate, UIImagePickerC
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         subscribeToKeyboardNotifications()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
         unsubscribeFromKeyboardNotifications()
     }
 
@@ -47,7 +54,7 @@ class AddNewVC: UIViewController, UINavigationControllerDelegate, UIImagePickerC
         switch ButtonType(rawValue: (sender as! UIBarButtonItem).tag)! {
         case .camera:
             imagePicker.sourceType = .camera
-        default:
+        case .album:
             imagePicker.sourceType = .photoLibrary
         }
         
@@ -96,14 +103,14 @@ class AddNewVC: UIViewController, UINavigationControllerDelegate, UIImagePickerC
     func keyboardWillShow(_ notification:Notification) {
         
         if bottomTextfield.isEditing {
-            view.frame.origin.y -= getKeyboardHeight(notification)
+            view.frame.origin.y = getKeyboardHeight(notification) * (-1)
         }
     }
     
     func keyboardWillHide(_ notification:Notification) {
         
         if bottomTextfield.isEditing {
-            view.frame.origin.y += getKeyboardHeight(notification)
+            view.frame.origin.y = 0
         }
     }
     
@@ -128,8 +135,8 @@ class AddNewVC: UIViewController, UINavigationControllerDelegate, UIImagePickerC
     
     func save() {
         // Create the meme
-        let _ = Meme(topText: topTextfield.text!, bottomText: bottomTextfield.text!, originalImage: imagePickerView.image!, memedImage: memedImage)
-
+        let meme = Meme(topText: topTextfield.text!, bottomText: bottomTextfield.text!, originalImage: imagePickerView.image!, memedImage: memedImage)
+        Singleton.sharedInstace.appendMeMe(meme)
     }
     
     func generateMemedImage() -> UIImage {
@@ -161,11 +168,16 @@ class AddNewVC: UIViewController, UINavigationControllerDelegate, UIImagePickerC
         
         let activityViewController = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
         activityViewController.popoverPresentationController?.sourceView = view
-        present(activityViewController, animated: true) { 
+        present(activityViewController, animated: true, completion: nil)
+        activityViewController.completionWithItemsHandler = { (activityType, completed:Bool, returnedItems:[Any]?, error: Error?) in
             self.save()
+            self.dismiss(animated: true, completion: nil)
         }
     }
 
+    @IBAction func dismissButtonAction(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
 
 }
 
