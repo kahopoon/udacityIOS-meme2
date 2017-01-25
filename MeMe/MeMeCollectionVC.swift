@@ -13,10 +13,6 @@ private let reuseIdentifier = "memeCell"
 class MeMeCollectionVC: UICollectionViewController {
 
     var memeImages:[Meme] = Singleton.sharedInstace.getMeMe()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -25,10 +21,6 @@ class MeMeCollectionVC: UICollectionViewController {
         collectionView?.reloadData()
     }
     
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return memeImages.count
     }
@@ -40,6 +32,12 @@ class MeMeCollectionVC: UICollectionViewController {
         return cell
     }
 
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let memeDetailsVC = storyboard?.instantiateViewController(withIdentifier: "ShowMeMeDetails") as! ShowMeMeDetails
+        memeDetailsVC.meme = memeImages[indexPath.row]
+        navigationController?.pushViewController(memeDetailsVC, animated: true)
+    }
+    
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         let width = UIScreen.main.bounds.width / 3
         let height = width

@@ -90,8 +90,9 @@ class AddNewVC: UIViewController, UINavigationControllerDelegate, UIImagePickerC
     }
 
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        
-        textField.text?.removeAll()
+        if textField.text == textField.placeholder {
+           textField.text?.removeAll()
+        }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -103,7 +104,8 @@ class AddNewVC: UIViewController, UINavigationControllerDelegate, UIImagePickerC
     func keyboardWillShow(_ notification:Notification) {
         
         if bottomTextfield.isEditing {
-            view.frame.origin.y = getKeyboardHeight(notification) * (-1)
+            // big thanks for this tip :D
+            view.frame.origin.y = -getKeyboardHeight(notification)
         }
     }
     
@@ -145,8 +147,8 @@ class AddNewVC: UIViewController, UINavigationControllerDelegate, UIImagePickerC
         showToolbars(false)
         
         // Render view to an image
-        UIGraphicsBeginImageContext(self.view.frame.size)
-        view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
+        UIGraphicsBeginImageContext(view.frame.size)
+        view.drawHierarchy(in: view.frame, afterScreenUpdates: true)
         let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         
@@ -170,8 +172,10 @@ class AddNewVC: UIViewController, UINavigationControllerDelegate, UIImagePickerC
         activityViewController.popoverPresentationController?.sourceView = view
         present(activityViewController, animated: true, completion: nil)
         activityViewController.completionWithItemsHandler = { (activityType, completed:Bool, returnedItems:[Any]?, error: Error?) in
-            self.save()
-            self.dismiss(animated: true, completion: nil)
+            if completed {
+                self.save()
+                self.dismiss(animated: true, completion: nil)
+            }
         }
     }
 
